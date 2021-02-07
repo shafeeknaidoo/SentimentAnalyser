@@ -16,7 +16,7 @@ namespace SentimentAnalyser
             _words = words;
         }
 
-        public override Dictionary<string, int> GetSentimentWords()
+        public Dictionary<string, int> GetSentimentWords()
         {
             var words = new Dictionary<string, int>();
             words.Add("happ", 1);

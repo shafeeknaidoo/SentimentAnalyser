@@ -14,11 +14,11 @@ namespace SentimentAnalyser
          * @param Dict<string,int> dictionary of word or characters to consider and the occurences to account for
          * @return bool
          */
-        public bool IsSentiment(string text,IDictionary<string,int> words)
+        protected bool IsSentiment(string text, IDictionary<string, int> words)
         {
             foreach (var word in words)
             {
-                if (Regex.Matches(text, @"\b" + word.Key,RegexOptions.IgnoreCase).Count >= word.Value)
+                if (Regex.Matches(text, @"\b" + word.Key, RegexOptions.IgnoreCase).Count >= word.Value)
                 {
                     return true;
                 }
@@ -26,10 +26,5 @@ namespace SentimentAnalyser
 
             return false;
         }
-        
-        /**
-         * Abstract method to be overridden in classes implementing this interface to ensure there are words that are sentiments 
-         */
-        public abstract Dictionary<string, int> GetSentimentWords();
     }
 }
